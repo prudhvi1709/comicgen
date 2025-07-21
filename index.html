@@ -115,6 +115,45 @@ Landing gracefully on the ground"></textarea>
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-12">
+                                                <label for="storyContextTemplate" class="form-label">Story Context Template</label>
+                                                <textarea class="form-control" id="storyContextTemplate" rows="3" placeholder="Template for adding story context to each panel">COMIC STORY CONTEXT:
+Full comic story ({totalPanels} panels): "{fullStory}"
+Current panel: {panelNumber}/{totalPanels}</textarea>
+                                                <div class="form-text">Use {totalPanels}, {fullStory}, {panelNumber} as placeholders.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-4">
+                                                <label for="openingPanelTemplate" class="form-label">Opening Panel Template</label>
+                                                <textarea class="form-control" id="openingPanelTemplate" rows="2" placeholder="Instructions for the first panel">This is the OPENING panel - establish the scene, characters, and mood effectively.</textarea>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="middlePanelTemplate" class="form-label">Middle Panel Template</label>
+                                                <textarea class="form-control" id="middlePanelTemplate" rows="2" placeholder="Instructions for middle panels">This is a MIDDLE panel - advance the story and maintain narrative flow.</textarea>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="finalPanelTemplate" class="form-label">Final Panel Template</label>
+                                                <textarea class="form-control" id="finalPanelTemplate" rows="2" placeholder="Instructions for the last panel">This is the FINAL panel - provide a strong conclusion or climax to the story.</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <label for="visualContinuityTemplate" class="form-label">Visual Continuity Template</label>
+                                                <textarea class="form-control" id="visualContinuityTemplate" rows="3" placeholder="Instructions for maintaining visual consistency">VISUAL CONTINUITY:
+Previous panel ({prevPanelNumber}) caption: "{prevCaption}"
+CRITICAL: Maintain the same art style, color palette, character design, lighting, and visual aesthetic as the previous panel. Ensure seamless visual flow between panels.</textarea>
+                                                <div class="form-text">Use {prevPanelNumber}, {prevCaption} as placeholders.</div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <label for="impactTemplate" class="form-label">Impact Enhancement Template</label>
+                                                <textarea class="form-control" id="impactTemplate" rows="2" placeholder="Instructions for maximum visual impact">CREATE MAXIMUM IMPACT:
+Make this panel visually striking and emotionally engaging. Consider composition, dramatic angles, and visual storytelling techniques that enhance the narrative moment.</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-12">
                                                 <label for="htmlPrompt" class="form-label">HTML Template Prompt</label>
                                                 <textarea class="form-control" id="htmlPrompt" rows="4" placeholder="Enter custom HTML template prompt or leave blank for default template">Create a complete HTML page for a comic with {panelCount} panels.
 
@@ -156,7 +195,7 @@ Generate only the complete HTML code.</textarea>
                         <div id="resultsContainer" style="display: none;">
                             <h3 class="mb-3"><i class="fas fa-images me-2"></i>Generated Comic Panels</h3>
                             <div id="comicPanels" class="row"></div>
-                            <div class="mt-4">
+                            <div class="mt-4" id="downloadButtons" style="display: none;">
                                 <div class="d-flex gap-2 flex-wrap">
                                     <button class="btn btn-success" id="downloadBtn" type="button">
                                         <i class="fas fa-download me-2"></i>Download Comic HTML
